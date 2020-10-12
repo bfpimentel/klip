@@ -22,13 +22,13 @@ struct KlipView: View {
                 }) {
                     Image(systemName: "plus")
                         .resizable()
-                        .padding(4)
+                        .padding(6)
                         .frame(width: 24, height: 24)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(Color.blue)
+                        .background(Color.white)
+                        .overlay(Circle().stroke(Color.blue, lineWidth: 1))
+                        .foregroundColor(.blue)
                 }
-            }.frame(minWidth: 0, maxWidth: .infinity).padding()
+            }.frame(maxWidth: .infinity).padding()
             Klips(items)
         }.frame(minWidth: 0,
                 maxWidth: .infinity,
