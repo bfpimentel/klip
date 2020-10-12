@@ -16,6 +16,12 @@
 		156E8D3B2534DC5200A77397 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */; };
 		156E8D3F2534DC5200A77397 /* klipboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 156E8D382534DC5200A77397 /* klipboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		156E8D512534E2C400A77397 /* KlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D502534E2C400A77397 /* KlipView.swift */; };
+		156E8D60253500F900A77397 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D5F253500F900A77397 /* Reducer.swift */; };
+		156E8D6A2535026D00A77397 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D692535026D00A77397 /* Store.swift */; };
+		156E8D702535039F00A77397 /* KlipState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D6F2535039F00A77397 /* KlipState.swift */; };
+		156E8D76253503FB00A77397 /* KlipAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D75253503FA00A77397 /* KlipAction.swift */; };
+		156E8D812535049100A77397 /* KlipReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D802535049100A77397 /* KlipReducer.swift */; };
+		156E8D8B253508FD00A77397 /* KlipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D8A253508FD00A77397 /* KlipStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		156E8D3C2534DC5200A77397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		156E8D502534E2C400A77397 /* KlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipView.swift; sourceTree = "<group>"; };
+		156E8D5F253500F900A77397 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		156E8D692535026D00A77397 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		156E8D6F2535039F00A77397 /* KlipState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipState.swift; sourceTree = "<group>"; };
+		156E8D75253503FA00A77397 /* KlipAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipAction.swift; sourceTree = "<group>"; };
+		156E8D802535049100A77397 /* KlipReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipReducer.swift; sourceTree = "<group>"; };
+		156E8D8A253508FD00A77397 /* KlipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,11 +182,33 @@
 		156E8D392534DC5200A77397 /* klipboard */ = {
 			isa = PBXGroup;
 			children = (
+				156E8D7F2535047100A77397 /* main */,
+				156E8D5E253500E000A77397 /* redux */,
 				156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */,
 				156E8D3C2534DC5200A77397 /* Info.plist */,
-				156E8D502534E2C400A77397 /* KlipView.swift */,
 			);
 			path = klipboard;
+			sourceTree = "<group>";
+		};
+		156E8D5E253500E000A77397 /* redux */ = {
+			isa = PBXGroup;
+			children = (
+				156E8D5F253500F900A77397 /* Reducer.swift */,
+				156E8D692535026D00A77397 /* Store.swift */,
+			);
+			path = redux;
+			sourceTree = "<group>";
+		};
+		156E8D7F2535047100A77397 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				156E8D502534E2C400A77397 /* KlipView.swift */,
+				156E8D6F2535039F00A77397 /* KlipState.swift */,
+				156E8D75253503FA00A77397 /* KlipAction.swift */,
+				156E8D802535049100A77397 /* KlipReducer.swift */,
+				156E8D8A253508FD00A77397 /* KlipStore.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +396,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				156E8D512534E2C400A77397 /* KlipView.swift in Sources */,
+				156E8D812535049100A77397 /* KlipReducer.swift in Sources */,
 				156E8D3B2534DC5200A77397 /* KeyboardViewController.swift in Sources */,
+				156E8D60253500F900A77397 /* Reducer.swift in Sources */,
+				156E8D6A2535026D00A77397 /* Store.swift in Sources */,
+				156E8D702535039F00A77397 /* KlipState.swift in Sources */,
+				156E8D76253503FB00A77397 /* KlipAction.swift in Sources */,
+				156E8D8B253508FD00A77397 /* KlipStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
