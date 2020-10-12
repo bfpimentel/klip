@@ -15,6 +15,7 @@
 		156E8D212534DB1100A77397 /* klipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D202534DB1100A77397 /* klipUITests.swift */; };
 		156E8D3B2534DC5200A77397 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */; };
 		156E8D3F2534DC5200A77397 /* klipboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 156E8D382534DC5200A77397 /* klipboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		156E8D512534E2C400A77397 /* KlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D502534E2C400A77397 /* KlipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		156E8D382534DC5200A77397 /* klipboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = klipboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		156E8D3C2534DC5200A77397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		156E8D502534E2C400A77397 /* KlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */,
 				156E8D3C2534DC5200A77397 /* Info.plist */,
+				156E8D502534E2C400A77397 /* KlipView.swift */,
 			);
 			path = klipboard;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156E8D512534E2C400A77397 /* KlipView.swift in Sources */,
 				156E8D3B2534DC5200A77397 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -536,6 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -633,6 +639,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klip.klipboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -651,6 +658,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klip.klipboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
