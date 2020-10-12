@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct KlipView: View {
-    @State private var items: [String] = []
-    @State private var count = 0
+    @EnvironmentObject private var store: Store<KlipState, KlipAction>
+    @State private var count = 0 // TODO - need to remove count after
+    
+    private let textDocumentProxy: UITextDocumentProxy
+    
+    init(_ textDocumentProxy: UITextDocumentProxy) {
+        self.textDocumentProxy = textDocumentProxy
+    }
     
     var body: some View {
         VStack {
@@ -17,7 +23,7 @@ struct KlipView: View {
                 Text("Klip").font(.title2).fontWeight(.semibold)
                 Spacer()
                 Button(action: {
-                    items.append("Teste\(count)")
+                    self.store.send(.add("Klip\(count)"))
                     count += 1
                 }) {
                     Image(systemName: "plus")
@@ -29,7 +35,7 @@ struct KlipView: View {
                         .foregroundColor(.blue)
                 }
             }.frame(maxWidth: .infinity).padding()
-            Klips(items)
+            Klips(items: store.state.klips, onTap: { item in textDocumentProxy.insertText(item) })
         }.frame(minWidth: 0,
                 maxWidth: .infinity,
                 minHeight: 0,
@@ -40,21 +46,19 @@ struct KlipView: View {
 }
 
 struct Klips: View {
-    private var items: [String] = []
+    private let items: [String]
+    private let onTap: (String) -> Void
     
-    public init(_ items: [String]) {
+    public init(items: [String], onTap: @escaping (String) -> Void) {
         self.items = items
+        self.onTap = onTap
     }
     
     var body: some View {
         List(items, id: \.self) { item in
-            Text(item)
+            Button(action: { onTap(item) }) {
+                Text(item)
+            }
         }
-    }
-}
-
-struct KlipView_Previews: PreviewProvider {
-    static var previews: some View {
-        KlipView()
     }
 }

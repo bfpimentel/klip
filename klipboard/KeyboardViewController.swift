@@ -20,7 +20,7 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let child = UIHostingController(rootView: KlipView())
+        let child = UIHostingController(rootView: KlipView(textDocumentProxy).environmentObject(Store.klipStore()))
         child.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(child.view)
         addChild(child)
@@ -61,3 +61,6 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
 }
+
+
+
