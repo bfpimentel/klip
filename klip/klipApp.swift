@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct klipApp: App {
+    @State private var text = ""
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+            TextField("Teste de input", text: $text)
         }
     }
 }
