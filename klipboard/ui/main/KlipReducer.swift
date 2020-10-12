@@ -9,18 +9,21 @@ import Foundation
 
 extension Reducer where State == KlipState, Action == KlipAction {
     static func klipReducer() -> Reducer {
-        var klips: [String] = [] // TODO - need to move to data source
+        let klipsRepository: KlipsRepository = KlipsRepositoryImpl()
+        let getKlips = GetKlips(klipsRepository: klipsRepository)
+        let addKlip = AddKlip(klipsRepository: klipsRepository)
         
         return Reducer { state, action in
             switch action {
             case let .add(klip):
-                klips.append(klip)
+                addKlip.invoke(AddKlip.AddKlipParams(value: klip))
             }
             
             return Reducer.sync { state in
-                state.klips = klips
+                state.klips = getKlips.invoke(NoParams())
             }
         }
     }
 }
+
 

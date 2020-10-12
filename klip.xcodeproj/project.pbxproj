@@ -22,6 +22,11 @@
 		156E8D76253503FB00A77397 /* KlipAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D75253503FA00A77397 /* KlipAction.swift */; };
 		156E8D812535049100A77397 /* KlipReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D802535049100A77397 /* KlipReducer.swift */; };
 		156E8D8B253508FD00A77397 /* KlipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8D8A253508FD00A77397 /* KlipStore.swift */; };
+		156E8DA92535131D00A77397 /* GetKlips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DA82535131D00A77397 /* GetKlips.swift */; };
+		156E8DB4253513EB00A77397 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DB3253513EB00A77397 /* UseCase.swift */; };
+		156E8DC1253515C100A77397 /* KlipsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DC0253515C100A77397 /* KlipsRepository.swift */; };
+		156E8DC72535163500A77397 /* KlipsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DC62535163500A77397 /* KlipsRepositoryImpl.swift */; };
+		156E8DCD2535168800A77397 /* AddKlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DCC2535168800A77397 /* AddKlip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,11 @@
 		156E8D75253503FA00A77397 /* KlipAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipAction.swift; sourceTree = "<group>"; };
 		156E8D802535049100A77397 /* KlipReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipReducer.swift; sourceTree = "<group>"; };
 		156E8D8A253508FD00A77397 /* KlipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipStore.swift; sourceTree = "<group>"; };
+		156E8DA82535131D00A77397 /* GetKlips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetKlips.swift; sourceTree = "<group>"; };
+		156E8DB3253513EB00A77397 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		156E8DC0253515C100A77397 /* KlipsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipsRepository.swift; sourceTree = "<group>"; };
+		156E8DC62535163500A77397 /* KlipsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipsRepositoryImpl.swift; sourceTree = "<group>"; };
+		156E8DCC2535168800A77397 /* AddKlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKlip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +192,9 @@
 		156E8D392534DC5200A77397 /* klipboard */ = {
 			isa = PBXGroup;
 			children = (
-				156E8D7F2535047100A77397 /* main */,
+				156E8DA6253512EE00A77397 /* data */,
+				156E8DA5253512E700A77397 /* domain */,
+				156E8DA4253512D800A77397 /* ui */,
 				156E8D5E253500E000A77397 /* redux */,
 				156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */,
 				156E8D3C2534DC5200A77397 /* Info.plist */,
@@ -209,6 +221,73 @@
 				156E8D8A253508FD00A77397 /* KlipStore.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		156E8DA4253512D800A77397 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				156E8D7F2535047100A77397 /* main */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		156E8DA5253512E700A77397 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DBF2535158800A77397 /* repository */,
+				156E8DBE2535158300A77397 /* model */,
+				156E8DBD2535157C00A77397 /* entity */,
+				156E8DA7253512F600A77397 /* usecases */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		156E8DA6253512EE00A77397 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DC62535163500A77397 /* KlipsRepositoryImpl.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		156E8DA7253512F600A77397 /* usecases */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DB2253513DD00A77397 /* shared */,
+				156E8DA82535131D00A77397 /* GetKlips.swift */,
+				156E8DCC2535168800A77397 /* AddKlip.swift */,
+			);
+			path = usecases;
+			sourceTree = "<group>";
+		};
+		156E8DB2253513DD00A77397 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DB3253513EB00A77397 /* UseCase.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		156E8DBD2535157C00A77397 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		156E8DBE2535158300A77397 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		156E8DBF2535158800A77397 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DC0253515C100A77397 /* KlipsRepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,10 +476,15 @@
 			files = (
 				156E8D512534E2C400A77397 /* KlipView.swift in Sources */,
 				156E8D812535049100A77397 /* KlipReducer.swift in Sources */,
+				156E8DC1253515C100A77397 /* KlipsRepository.swift in Sources */,
 				156E8D3B2534DC5200A77397 /* KeyboardViewController.swift in Sources */,
 				156E8D60253500F900A77397 /* Reducer.swift in Sources */,
+				156E8DC72535163500A77397 /* KlipsRepositoryImpl.swift in Sources */,
 				156E8D6A2535026D00A77397 /* Store.swift in Sources */,
+				156E8DB4253513EB00A77397 /* UseCase.swift in Sources */,
+				156E8DA92535131D00A77397 /* GetKlips.swift in Sources */,
 				156E8D702535039F00A77397 /* KlipState.swift in Sources */,
+				156E8DCD2535168800A77397 /* AddKlip.swift in Sources */,
 				156E8D76253503FB00A77397 /* KlipAction.swift in Sources */,
 				156E8D8B253508FD00A77397 /* KlipStore.swift in Sources */,
 			);
