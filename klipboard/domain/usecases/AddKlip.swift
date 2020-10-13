@@ -18,7 +18,7 @@ final class AddKlip: UseCase {
     }
     
     func invoke(_ params: AddKlipParams) -> Void {
-        klipsRepository.saveKlip(params.value)
+        klipsRepository.addKlip(params.value)
     }
     
     struct AddKlipParams {

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol KlipsRepository {
-    func getKlips() -> [String]
-    func saveKlip(_ klip: String)
+    func getKlips() -> [KlipModel]
+    func updateKlip(_ klip: Klip)
+    func addKlip(_ klipValue: String)
 }

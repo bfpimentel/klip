@@ -9,7 +9,7 @@ import Foundation
 
 final class GetKlips: UseCase {
     typealias Params = NoParams
-    typealias Result = [String]
+    typealias Result = [Klip]
     
     private let klipsRepository: KlipsRepository
     
@@ -17,7 +17,9 @@ final class GetKlips: UseCase {
         self.klipsRepository = klipsRepository
     }
     
-    func invoke(_ params: NoParams) -> [String] {
-        return klipsRepository.getKlips()
+    func invoke(_ params: NoParams) -> [Klip] {
+        return klipsRepository.getKlips().map { klipModel in
+            Klip(id: klipModel.id, value: klipModel.value)
+        }
     }
 }

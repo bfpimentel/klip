@@ -25,5 +25,3 @@ extension Reducer where State == KlipState, Action == KlipAction {
         }
     }
 }
-
-
