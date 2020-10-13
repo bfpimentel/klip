@@ -9,7 +9,6 @@ import SwiftUI
 
 struct KlipView: View {
     @EnvironmentObject private var store: Store<KlipState, KlipAction>
-    @State private var count = 0 // TODO - need to remove count after
     
     private let textDocumentProxy: UITextDocumentProxy
     
@@ -18,13 +17,16 @@ struct KlipView: View {
     }
     
     var body: some View {
-        VStack {
+        self.store.send(.get)
+        
+        return VStack {
             HStack(alignment: .top, spacing: 0) {
                 Text("Klip").font(.title2).fontWeight(.semibold)
                 Spacer()
                 Button(action: {
-                    self.store.send(.add("Klip\(count)"))
-                    count += 1
+                    if let text = textDocumentProxy.selectedText {
+                        self.store.send(.add(text))
+                    }
                 }) {
                     Image(systemName: "plus")
                         .resizable()
