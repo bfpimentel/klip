@@ -8,6 +8,7 @@
 import Foundation
 
 enum KlipAction {
+    case get
     case add(String)
     case update(id: Int)
 }

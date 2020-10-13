@@ -30,3 +30,4 @@ final class Store<State, Action>: ObservableObject {
         change(&state)
     }
 }
+

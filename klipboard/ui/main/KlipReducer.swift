@@ -17,6 +17,8 @@ extension Reducer where State == KlipState, Action == KlipAction {
         
         return Reducer { state, action in
             switch action {
+            case .get:
+                break
             case let .add(klip):
                 addKlip.invoke(AddKlip.AddKlipParams(value: klip))
             case .update(_):
@@ -24,8 +26,9 @@ extension Reducer where State == KlipState, Action == KlipAction {
             }
             
             return Reducer.sync { state in
-                klips = getKlips.invoke(NoParams())
-                state.klips = klips.map { klip in klip.value }
+                let newKlips = getKlips.invoke(NoParams())
+                state.klips = newKlips.map { klip in klip.value }
+                klips = newKlips
             }
         }
     }

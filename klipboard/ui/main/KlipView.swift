@@ -9,7 +9,6 @@ import SwiftUI
 
 struct KlipView: View {
     @EnvironmentObject private var store: Store<KlipState, KlipAction>
-
     
     private let textDocumentProxy: UITextDocumentProxy
     
@@ -18,7 +17,9 @@ struct KlipView: View {
     }
     
     var body: some View {
-        VStack {
+        self.store.send(.get)
+        
+        return VStack {
             HStack(alignment: .top, spacing: 0) {
                 Text("Klip").font(.title2).fontWeight(.semibold)
                 Spacer()
