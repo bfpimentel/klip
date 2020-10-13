@@ -18,11 +18,10 @@ final class UpdateKlip: UseCase {
     }
     
     func invoke(_ params: UpdateKlipParams) -> Void {
-        klipsRepository.updateKlip(<#T##klip: KlipModel##KlipModel#>)(params.value)
+        klipsRepository.updateKlip(params.klip)
     }
     
     struct UpdateKlipParams {
-        let id: String
-        let value: String
+        let klip: Klip
     }
 }

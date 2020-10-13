@@ -21,10 +21,8 @@ final class KlipsRepositoryImpl: KlipsRepository {
         }
     }
     
-    func updateKlip(_ klip: KlipModel) {
-        self.klipsLocalDataSource.updateKlip(
-            KlipDTO(id: klip.id, value: klip.value)
-        )
+    func updateKlip(_ klip: Klip) {
+        self.klipsLocalDataSource.updateKlip(klip)
     }
     
     func addKlip(_ klipValue: String) {
