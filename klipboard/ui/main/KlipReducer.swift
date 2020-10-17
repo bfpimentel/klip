@@ -23,6 +23,8 @@ extension Reducer where State == KlipState, Action == KlipAction {
                 addKlip.invoke(AddKlip.AddKlipParams(value: klip))
             case .update(_):
                 break
+            case let .remove(id):
+                break
             }
             
             return Reducer.sync { state in

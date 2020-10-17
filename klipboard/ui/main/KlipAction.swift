@@ -11,4 +11,5 @@ enum KlipAction {
     case get
     case add(String)
     case update(id: Int)
+    case remove(id: Int)
 }
