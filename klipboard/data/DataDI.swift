@@ -7,25 +7,30 @@
 
 import Foundation
 
-final class DataDI {
-    
-    private static var userDefauts: UserDefaults {
-        return UserDefaults(suiteName: "dev.pimentel.klip")!
+enum DataDI {
+
+    // MARK: Internal
+
+    static var klipsRepository: KlipsRepository {
+        KlipsRepositoryImpl(klipsLocalDataSource: klipsLocalDataSource)
     }
-    
+
+    // MARK: Private
+
     private static var jsonEncoder = JSONEncoder()
     private static var jsonDecoder = JSONDecoder()
-    
-    static var klipsRepository: KlipsRepository {
-        return KlipsRepositoryImpl(klipsLocalDataSource: klipsLocalDataSource)
+
+
+    private static var userDefauts: UserDefaults {
+        UserDefaults(suiteName: "dev.pimentel.klip") ?? .standard
     }
-    
+
     private static var klipsLocalDataSource: KlipsLocalDataSource {
-        return KlipsLocalDataSource(userDefaults: userDefauts,
-                                    jsonEncoder: jsonEncoder,
-                                    jsonDecoder: jsonDecoder)
+        KlipsLocalDataSource(
+            userDefaults: userDefauts,
+            jsonEncoder: jsonEncoder,
+            jsonDecoder: jsonDecoder
+        )
     }
-    
-    private init() {
-    }
+
 }

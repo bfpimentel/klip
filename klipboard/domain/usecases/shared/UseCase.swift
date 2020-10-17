@@ -10,9 +10,8 @@ import Foundation
 protocol UseCase {
     associatedtype Params
     associatedtype Result
-    
+
     func invoke(_ params: Params) -> Result
 }
 
-struct NoParams {
-}
+typealias NoParams = Void

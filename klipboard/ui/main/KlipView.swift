@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct KlipView: View {
-    @EnvironmentObject private var store: Store<KlipState, KlipAction>
-    
-    private let textDocumentProxy: UITextDocumentProxy
-    
+
+    // MARK: Lifecycle
+
     init(_ textDocumentProxy: UITextDocumentProxy) {
         self.textDocumentProxy = textDocumentProxy
     }
-    
+
+    // MARK: Internal
+
     var body: some View {
-        self.store.send(.get)
-        
+        store.send(.get)
+
         return VStack {
             HStack(alignment: .top, spacing: 0) {
                 Text("Klip").font(.title2).fontWeight(.semibold)
                 Spacer()
                 Button(action: {
                     if let text = textDocumentProxy.selectedText {
-                        self.store.send(.add(text))
+                        store.send(.add(text))
                     }
                 }) {
                     Image(systemName: "plus")
@@ -37,25 +38,32 @@ struct KlipView: View {
                         .foregroundColor(.blue)
                 }
             }.frame(maxWidth: .infinity).padding()
-            Klips(items: store.state.klips, onTap: { item in textDocumentProxy.insertText(item) })
-        }.frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
+            Klips(items: store.state.klips, onTap: textDocumentProxy.insertText)
+        }.frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
         ).background(Color.white)
     }
+
+    // MARK: Private
+
+    @EnvironmentObject private var store: Store<KlipState, KlipAction>
+
+    private let textDocumentProxy: UITextDocumentProxy
 }
 
 struct Klips: View {
     private let items: [String]
     private let onTap: (String) -> Void
-    
+
     public init(items: [String], onTap: @escaping (String) -> Void) {
         self.items = items
         self.onTap = onTap
     }
-    
+
     var body: some View {
         List(items, id: \.self) { item in
             Button(action: { onTap(item) }) {

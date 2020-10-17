@@ -8,20 +8,25 @@
 import Foundation
 
 final class UpdateKlip: UseCase {
-    typealias Params = UpdateKlipParams
-    typealias Result = Void
-    
-    private let klipsRepository: KlipsRepository
-    
+
+    // MARK: Lifecycle
+
     init(klipsRepository: KlipsRepository) {
         self.klipsRepository = klipsRepository
     }
-    
-    func invoke(_ params: UpdateKlipParams) -> Void {
-        klipsRepository.updateKlip(params.klip)
-    }
-    
+
+    // MARK: Internal
+
     struct UpdateKlipParams {
         let klip: Klip
     }
+
+
+    func invoke(_ params: UpdateKlipParams) {
+        klipsRepository.updateKlip(params.klip)
+    }
+
+    // MARK: Private
+
+    private let klipsRepository: KlipsRepository
 }

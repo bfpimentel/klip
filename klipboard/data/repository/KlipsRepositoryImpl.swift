@@ -8,26 +8,31 @@
 import Foundation
 
 final class KlipsRepositoryImpl: KlipsRepository {
-    
-    private let klipsLocalDataSource: KlipsLocalDataSource
-    
+
+    // MARK: Lifecycle
+
     init(klipsLocalDataSource: KlipsLocalDataSource) {
         self.klipsLocalDataSource = klipsLocalDataSource
     }
-    
+
+    // MARK: Internal
+
     func getKlips() -> [KlipModel] {
-        return self.klipsLocalDataSource.getKlips().map { klipDTO in
-            KlipModelImpl(id: klipDTO.id, value: klipDTO.value)
-        }
+        klipsLocalDataSource.getKlips()
+            .map { KlipModelImpl(id: $0.id, value: $0.value) }
     }
-    
+
     func updateKlip(_ klip: Klip) {
-        self.klipsLocalDataSource.updateKlip(klip)
+        klipsLocalDataSource.updateKlip(klip)
     }
-    
+
     func addKlip(_ klipValue: String) {
-        self.klipsLocalDataSource.addKlip(klipValue)
+        klipsLocalDataSource.addKlip(klipValue)
     }
+
+    // MARK: Private
+
+    private let klipsLocalDataSource: KlipsLocalDataSource
 }
 
 

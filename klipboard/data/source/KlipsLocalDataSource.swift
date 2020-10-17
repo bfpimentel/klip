@@ -8,47 +8,59 @@
 import Foundation
 
 final class KlipsLocalDataSource {
-    
-    private let KLIPS_KEY = "KLIPS"
-    
-    private let userDefaults: UserDefaults
-    private let jsonEncoder: JSONEncoder
-    private let jsonDecoder: JSONDecoder
-    
-    init(userDefaults: UserDefaults,
-         jsonEncoder: JSONEncoder,
-         jsonDecoder: JSONDecoder) {
+
+    // MARK: Lifecycle
+
+    init(
+        userDefaults: UserDefaults,
+        jsonEncoder: JSONEncoder,
+        jsonDecoder: JSONDecoder
+    ) {
         self.userDefaults = userDefaults
         self.jsonEncoder = jsonEncoder
         self.jsonDecoder = jsonDecoder
     }
-    
+
+    // MARK: Internal
+
     func getKlips() -> [KlipDTO] {
-        if let result = userDefaults.object(forKey: KLIPS_KEY) as? Data {
-            if let klips = try? jsonDecoder.decode([KlipDTO].self, from: result) {
-                return klips
-            }
-        }
-        return []
+        userDefaults
+            .data(forKey: KLIPS_KEY)
+            .flatMap { try? jsonDecoder.decode([KlipDTO].self, from: $0) } ?? []
     }
-    
+
     func addKlip(_ klipValue: String) {
         var klips = getKlips()
         let lastId = klips.last?.id
-        let newId = lastId != nil ? lastId! + 1 : 0
+        let newId = lastId.map { $0 + 1 } ?? 0
         klips.append(KlipDTO(id: newId, value: klipValue))
         saveKlips(klips)
     }
-    
+
     func updateKlip(_ klipToUpdate: Klip) {
         var klips = getKlips()
-        let klipToUpdateIndex = klips.firstIndex(where: { klip in klip.id == klipToUpdate.id })
-        klips[klipToUpdateIndex!] = KlipDTO(id: klipToUpdate.id, value: klipToUpdate.value)
+
+        guard let klipToUpdateIndex = klips.firstIndex(where: { $0.id == klipToUpdate.id }) else {
+            return
+        }
+
+        klips[klipToUpdateIndex] = KlipDTO(id: klipToUpdate.id, value: klipToUpdate.value)
         saveKlips(klips)
     }
-    
+
+    // MARK: Private
+
+    private let KLIPS_KEY = "KLIPS"
+
+    private let userDefaults: UserDefaults
+    private let jsonEncoder: JSONEncoder
+    private let jsonDecoder: JSONDecoder
+
     private func saveKlips(_ klips: [KlipDTO]) {
-        let klipsJson = try! jsonEncoder.encode(klips)
-        userDefaults.set(klipsJson, forKey: KLIPS_KEY)
+        guard let data = try? jsonEncoder.encode(klips) else {
+            return
+        }
+
+        userDefaults.set(data, forKey: KLIPS_KEY)
     }
 }

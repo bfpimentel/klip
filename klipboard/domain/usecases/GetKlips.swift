@@ -8,18 +8,21 @@
 import Foundation
 
 final class GetKlips: UseCase {
-    typealias Params = NoParams
-    typealias Result = [Klip]
-    
-    private let klipsRepository: KlipsRepository
-    
+
+    // MARK: Lifecycle
+
     init(klipsRepository: KlipsRepository) {
         self.klipsRepository = klipsRepository
     }
-    
+
+    // MARK: Internal
+
     func invoke(_ params: NoParams) -> [Klip] {
-        return klipsRepository.getKlips().map { klipModel in
-            Klip(id: klipModel.id, value: klipModel.value)
-        }
+        klipsRepository.getKlips()
+            .map { Klip(id: $0.id, value: $0.value) }
     }
+
+    // MARK: Private
+
+    private let klipsRepository: KlipsRepository
 }
