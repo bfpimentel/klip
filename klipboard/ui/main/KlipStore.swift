@@ -9,6 +9,6 @@ import Foundation
 
 extension Store where State == KlipState, Action == KlipAction {
     static func klipStore() -> Store<KlipState, KlipAction> {
-        return Store(initialState: KlipState(), reducer: Reducer.klipReducer())
+        Store(initialState: KlipState(), reducer: Reducer.klipReducer())
     }
 }
