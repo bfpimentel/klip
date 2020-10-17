@@ -12,26 +12,23 @@ extension Reducer where State == KlipState, Action == KlipAction {
         let getKlips = DomainDI.getKlips
         let addKlip = DomainDI.addKlip
 //        let updateKlip = DomainDI.updateKlip
-        
+
         var klips: [Klip] = []
-        
+
         return Reducer { state, action in
             switch action {
-            case .get:
-                break
-            case let .add(klip):
-                addKlip.invoke(AddKlip.AddKlipParams(value: klip))
-            case .update(_):
-                break
-            case let .remove(id):
-                break
+            case .get: ()
+            case let .add(klip): addKlip.invoke(AddKlip.AddKlipParams(value: klip))
+            case .update: ()
+            case .remove(_): ()
             }
-            
+
             return Reducer.sync { state in
                 let newKlips = getKlips.invoke(NoParams())
-                state.klips = newKlips.map { klip in klip.value }
                 klips = newKlips
+                state.klips = klips.map(\.value)
             }
         }
     }
 }
+

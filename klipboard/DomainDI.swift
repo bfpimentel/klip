@@ -7,22 +7,17 @@
 
 import Foundation
 
-final class DomainDI {
-    
+enum DomainDI {
+
     static var getKlips: GetKlips {
-        return GetKlips(klipsRepository: DataDI.klipsRepository)
+        GetKlips(klipsRepository: DataDI.klipsRepository)
     }
-    
+
     static var addKlip: AddKlip {
-        return AddKlip(klipsRepository: DataDI.klipsRepository)
+        AddKlip(klipsRepository: DataDI.klipsRepository)
     }
-    
+
     static var updateKlip: UpdateKlip {
-        return UpdateKlip(klipsRepository: DataDI.klipsRepository)
-    }
-    
-    private init() {
+        UpdateKlip(klipsRepository: DataDI.klipsRepository)
     }
 }
-
-

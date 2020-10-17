@@ -5,8 +5,8 @@
 //  Created by Bruno Pimentel on 12/10/20.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 struct Reducer<State, Action> {
     typealias Change = (inout State) -> Void
@@ -14,8 +14,8 @@ struct Reducer<State, Action> {
 }
 
 extension Reducer {
-    static func sync(_ fun: @escaping (inout State) -> Void) -> AnyPublisher<Change, Never> {
-        Just(fun).eraseToAnyPublisher()
+    static func sync(_ change: @escaping Change) -> AnyPublisher<Change, Never> {
+        Just(change).eraseToAnyPublisher()
     }
 }
 
