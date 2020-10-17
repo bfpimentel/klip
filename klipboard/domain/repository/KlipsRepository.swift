@@ -9,6 +9,7 @@ import Foundation
 
 protocol KlipsRepository {
     func getKlips() -> [KlipModel]
+    func addKlip(withValue value: String)
+    func removeKlip(withId id: Int)
     func updateKlip(_ klip: Klip)
-    func addKlip(_ klipValue: String)
 }

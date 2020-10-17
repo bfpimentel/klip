@@ -17,13 +17,13 @@ final class AddKlip: UseCase {
 
     // MARK: Internal
 
-    struct AddKlipParams {
+    struct Params {
         let value: String
     }
 
 
-    func invoke(_ params: AddKlipParams) {
-        klipsRepository.addKlip(params.value)
+    func invoke(_ params: Params) {
+        klipsRepository.addKlip(withValue: params.value)
     }
 
     // MARK: Private

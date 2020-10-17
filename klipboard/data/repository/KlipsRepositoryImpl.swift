@@ -22,12 +22,16 @@ final class KlipsRepositoryImpl: KlipsRepository {
             .map { KlipModelImpl(id: $0.id, value: $0.value) }
     }
 
+    func addKlip(withValue value: String) {
+        klipsLocalDataSource.addKlip(withValue: value)
+    }
+    
+    func removeKlip(withId id: Int) {
+        klipsLocalDataSource.removeKlip(withId: id)
+    }
+    
     func updateKlip(_ klip: Klip) {
         klipsLocalDataSource.updateKlip(klip)
-    }
-
-    func addKlip(_ klipValue: String) {
-        klipsLocalDataSource.addKlip(klipValue)
     }
 
     // MARK: Private

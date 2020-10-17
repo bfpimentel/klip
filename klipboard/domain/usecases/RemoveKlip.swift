@@ -1,13 +1,13 @@
 //
-//  UpdateKlip.swift
+//  RemoveKlip.swift
 //  klipboard
 //
-//  Created by Bruno Pimentel on 13/10/20.
+//  Created by Bruno Pimentel on 17/10/20.
 //
 
 import Foundation
 
-final class UpdateKlip: UseCase {
+final class RemoveKlip: UseCase {
 
     // MARK: Lifecycle
 
@@ -18,12 +18,12 @@ final class UpdateKlip: UseCase {
     // MARK: Internal
 
     struct Params {
-        let klip: Klip
+        let klipId: Int
     }
 
 
     func invoke(_ params: Params) {
-        klipsRepository.updateKlip(params.klip)
+        klipsRepository.removeKlip(withId: params.klipId)
     }
 
     // MARK: Private

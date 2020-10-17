@@ -8,5 +8,5 @@
 import Foundation
 
 struct KlipState {
-    var klips: [String] = []
+    var klips: [KlipViewData] = []
 }

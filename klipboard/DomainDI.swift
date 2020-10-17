@@ -16,6 +16,10 @@ enum DomainDI {
     static var addKlip: AddKlip {
         AddKlip(klipsRepository: DataDI.klipsRepository)
     }
+    
+    static var removeKlip: RemoveKlip {
+        RemoveKlip(klipsRepository: DataDI.klipsRepository)
+    }
 
     static var updateKlip: UpdateKlip {
         UpdateKlip(klipsRepository: DataDI.klipsRepository)
