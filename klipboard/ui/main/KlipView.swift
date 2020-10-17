@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct KlipView: View {
-
+    
     // MARK: Lifecycle
-
+    
     init(_ textDocumentProxy: UITextDocumentProxy) {
         self.textDocumentProxy = textDocumentProxy
     }
-
+    
     // MARK: Internal
-
+    
     var body: some View {
         store.send(.get)
-
+        
         return VStack {
             HStack(alignment: .top, spacing: 0) {
                 Text("Klip").font(.title2).fontWeight(.semibold)
@@ -38,7 +38,12 @@ struct KlipView: View {
                         .foregroundColor(.blue)
                 }
             }.frame(maxWidth: .infinity).padding()
-            Klips(items: store.state.klips, onTap: textDocumentProxy.insertText)
+            
+            KlipList(
+                items: store.state.klips,
+                onTap: textDocumentProxy.insertText,
+                onDelete: { store.send(.remove(id: $0)) }
+            )
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
@@ -47,28 +52,43 @@ struct KlipView: View {
             alignment: .topLeading
         ).background(Color.white)
     }
-
+    
     // MARK: Private
-
+    
     @EnvironmentObject private var store: Store<KlipState, KlipAction>
-
+    
     private let textDocumentProxy: UITextDocumentProxy
 }
 
-struct Klips: View {
-    private let items: [String]
+struct KlipList: View {
+    private let items: [KlipViewData]
     private let onTap: (String) -> Void
-
-    public init(items: [String], onTap: @escaping (String) -> Void) {
+    private let onDelete: (Int) -> Void
+    
+    public init(
+        items: [KlipViewData],
+        onTap: @escaping (String) -> Void,
+        onDelete: @escaping (Int) -> Void
+    ) {
         self.items = items
         self.onTap = onTap
+        self.onDelete = onDelete
     }
-
+    
     var body: some View {
-        List(items, id: \.self) { item in
-            Button(action: { onTap(item) }) {
-                Text(item)
+        List {
+            ForEach(items, id: \.id) { klip in
+                Button(action: { onTap(klip.value) }) {
+                    Text(klip.value)
+                }
             }
+            .onDelete(perform: { indexSet in onDelete(items[indexSet.first!].id) })
         }
     }
 }
+
+struct KlipViewData {
+    let id: Int
+    let value: String
+}
+

@@ -29,7 +29,7 @@ final class KlipsLocalDataSource {
             .flatMap { try? jsonDecoder.decode([KlipDTO].self, from: $0) } ?? []
     }
 
-    func addKlip(_ klipValue: String) {
+    func addKlip(withValue klipValue: String) {
         var klips = getKlips()
         let lastId = klips.last?.id
         let newId = lastId.map { $0 + 1 } ?? 0
@@ -37,6 +37,17 @@ final class KlipsLocalDataSource {
         saveKlips(klips)
     }
 
+    func removeKlip(withId id: Int) {
+        var klips = getKlips()
+
+        guard let klipToRemoveIndex = klips.firstIndex(where: { $0.id == id }) else {
+            return
+        }
+
+        klips.remove(at: klipToRemoveIndex)
+        saveKlips(klips)
+    }
+    
     func updateKlip(_ klipToUpdate: Klip) {
         var klips = getKlips()
 
