@@ -27,6 +27,13 @@
 		156E8DC72535163500A77397 /* KlipsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DC62535163500A77397 /* KlipsRepositoryImpl.swift */; };
 		156E8DCD2535168800A77397 /* AddKlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E8DCC2535168800A77397 /* AddKlip.swift */; };
 		15A50C2D253B65400023D5B9 /* RemoveKlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A50C2C253B65400023D5B9 /* RemoveKlip.swift */; };
+		15DF1F3D25FEC609005711E7 /* klipShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DF1F3425FEC609005711E7 /* klipShared.framework */; };
+		15DF1F4425FEC609005711E7 /* klipSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF1F4325FEC609005711E7 /* klipSharedTests.swift */; };
+		15DF1F4625FEC609005711E7 /* klipShared.h in Headers */ = {isa = PBXBuildFile; fileRef = 15DF1F3625FEC609005711E7 /* klipShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15DF1F4925FEC609005711E7 /* klipShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DF1F3425FEC609005711E7 /* klipShared.framework */; };
+		15DF1F4A25FEC609005711E7 /* klipShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15DF1F3425FEC609005711E7 /* klipShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15DF1F6425FEC6A9005711E7 /* klipShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DF1F3425FEC609005711E7 /* klipShared.framework */; };
+		15DF1F6525FEC6A9005711E7 /* klipShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15DF1F3425FEC609005711E7 /* klipShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15EF02E6253651D800B704A3 /* KlipsLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF02E5253651D800B704A3 /* KlipsLocalDataSource.swift */; };
 		15EF02ED253652CB00B704A3 /* KlipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF02EC253652CB00B704A3 /* KlipDTO.swift */; };
 		15EF02F32536566100B704A3 /* KlipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF02F22536566100B704A3 /* KlipModel.swift */; };
@@ -60,6 +67,34 @@
 			remoteGlobalIDString = 156E8D372534DC5200A77397;
 			remoteInfo = klipboard;
 		};
+		15DF1F3E25FEC609005711E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156E8CF82534DB0F00A77397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15DF1F3325FEC609005711E7;
+			remoteInfo = klipShared;
+		};
+		15DF1F4025FEC609005711E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156E8CF82534DB0F00A77397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 156E8CFF2534DB0F00A77397;
+			remoteInfo = klip;
+		};
+		15DF1F4725FEC609005711E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156E8CF82534DB0F00A77397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15DF1F3325FEC609005711E7;
+			remoteInfo = klipShared;
+		};
+		15DF1F6625FEC6A9005711E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156E8CF82534DB0F00A77397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15DF1F3325FEC609005711E7;
+			remoteInfo = klipShared;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +107,28 @@
 				156E8D3F2534DC5200A77397 /* klipboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F4B25FEC609005711E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15DF1F4A25FEC609005711E7 /* klipShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F6825FEC6A9005711E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15DF1F6525FEC6A9005711E7 /* klipShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -104,6 +161,12 @@
 		156E8DC62535163500A77397 /* KlipsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipsRepositoryImpl.swift; sourceTree = "<group>"; };
 		156E8DCC2535168800A77397 /* AddKlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKlip.swift; sourceTree = "<group>"; };
 		15A50C2C253B65400023D5B9 /* RemoveKlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveKlip.swift; sourceTree = "<group>"; };
+		15DF1F3425FEC609005711E7 /* klipShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = klipShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15DF1F3625FEC609005711E7 /* klipShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = klipShared.h; sourceTree = "<group>"; };
+		15DF1F3725FEC609005711E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15DF1F3C25FEC609005711E7 /* klipSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = klipSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15DF1F4325FEC609005711E7 /* klipSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = klipSharedTests.swift; sourceTree = "<group>"; };
+		15DF1F4525FEC609005711E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15EF02E5253651D800B704A3 /* KlipsLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipsLocalDataSource.swift; sourceTree = "<group>"; };
 		15EF02EC253652CB00B704A3 /* KlipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipDTO.swift; sourceTree = "<group>"; };
 		15EF02F22536566100B704A3 /* KlipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlipModel.swift; sourceTree = "<group>"; };
@@ -120,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DF1F4925FEC609005711E7 /* klipShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +205,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DF1F6425FEC6A9005711E7 /* klipShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F3125FEC609005711E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F3925FEC609005711E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DF1F3D25FEC609005711E7 /* klipShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +234,10 @@
 				156E8D142534DB1100A77397 /* klipTests */,
 				156E8D1F2534DB1100A77397 /* klipUITests */,
 				156E8D392534DC5200A77397 /* klipboard */,
+				15DF1F3525FEC609005711E7 /* klipShared */,
+				15DF1F4225FEC609005711E7 /* klipSharedTests */,
 				156E8D012534DB0F00A77397 /* Products */,
+				15DF1F6325FEC6A9005711E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +248,8 @@
 				156E8D112534DB1100A77397 /* klipTests.xctest */,
 				156E8D1C2534DB1100A77397 /* klipUITests.xctest */,
 				156E8D382534DC5200A77397 /* klipboard.appex */,
+				15DF1F3425FEC609005711E7 /* klipShared.framework */,
+				15DF1F3C25FEC609005711E7 /* klipSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,10 +295,7 @@
 		156E8D392534DC5200A77397 /* klipboard */ = {
 			isa = PBXGroup;
 			children = (
-				156E8DA6253512EE00A77397 /* data */,
-				156E8DA5253512E700A77397 /* domain */,
 				156E8DA4253512D800A77397 /* ui */,
-				15EF030A25365E3600B704A3 /* DomainDI.swift */,
 				156E8D3A2534DC5200A77397 /* KeyboardViewController.swift */,
 				156E8D3C2534DC5200A77397 /* Info.plist */,
 			);
@@ -244,7 +326,6 @@
 		156E8DA4253512D800A77397 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				15EF031A2536622300B704A3 /* shared */,
 				156E8D7F2535047100A77397 /* main */,
 			);
 			path = ui;
@@ -257,6 +338,7 @@
 				156E8DBE2535158300A77397 /* model */,
 				156E8DBD2535157C00A77397 /* entity */,
 				156E8DA7253512F600A77397 /* usecases */,
+				15EF030A25365E3600B704A3 /* DomainDI.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -317,6 +399,50 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
+		15DF1F3525FEC609005711E7 /* klipShared */ = {
+			isa = PBXGroup;
+			children = (
+				156E8DA6253512EE00A77397 /* data */,
+				156E8DA5253512E700A77397 /* domain */,
+				15DF1F5C25FEC652005711E7 /* ui */,
+				15DF1F3625FEC609005711E7 /* klipShared.h */,
+				15DF1F3725FEC609005711E7 /* Info.plist */,
+			);
+			path = klipShared;
+			sourceTree = "<group>";
+		};
+		15DF1F4225FEC609005711E7 /* klipSharedTests */ = {
+			isa = PBXGroup;
+			children = (
+				15DF1F4325FEC609005711E7 /* klipSharedTests.swift */,
+				15DF1F4525FEC609005711E7 /* Info.plist */,
+			);
+			path = klipSharedTests;
+			sourceTree = "<group>";
+		};
+		15DF1F5C25FEC652005711E7 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				15DF1F5D25FEC659005711E7 /* shared */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		15DF1F5D25FEC659005711E7 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				156E8D5E253500E000A77397 /* redux */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		15DF1F6325FEC6A9005711E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		15EF02E22536518B00B704A3 /* repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,15 +475,18 @@
 			path = dto;
 			sourceTree = "<group>";
 		};
-		15EF031A2536622300B704A3 /* shared */ = {
-			isa = PBXGroup;
-			children = (
-				156E8D5E253500E000A77397 /* redux */,
-			);
-			path = shared;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15DF1F2F25FEC609005711E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DF1F4625FEC609005711E7 /* klipShared.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		156E8CFF2534DB0F00A77397 /* klip */ = {
@@ -368,11 +497,13 @@
 				156E8CFD2534DB0F00A77397 /* Frameworks */,
 				156E8CFE2534DB0F00A77397 /* Resources */,
 				156E8D402534DC5200A77397 /* Embed App Extensions */,
+				15DF1F4B25FEC609005711E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				156E8D3E2534DC5200A77397 /* PBXTargetDependency */,
+				15DF1F4825FEC609005711E7 /* PBXTargetDependency */,
 			);
 			name = klip;
 			productName = klip;
@@ -422,15 +553,54 @@
 				156E8D342534DC5200A77397 /* Sources */,
 				156E8D352534DC5200A77397 /* Frameworks */,
 				156E8D362534DC5200A77397 /* Resources */,
+				15DF1F6825FEC6A9005711E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				15DF1F6725FEC6A9005711E7 /* PBXTargetDependency */,
 			);
 			name = klipboard;
 			productName = klipboard;
 			productReference = 156E8D382534DC5200A77397 /* klipboard.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		15DF1F3325FEC609005711E7 /* klipShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15DF1F5025FEC609005711E7 /* Build configuration list for PBXNativeTarget "klipShared" */;
+			buildPhases = (
+				15DF1F2F25FEC609005711E7 /* Headers */,
+				15DF1F3025FEC609005711E7 /* Sources */,
+				15DF1F3125FEC609005711E7 /* Frameworks */,
+				15DF1F3225FEC609005711E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = klipShared;
+			productName = klipShared;
+			productReference = 15DF1F3425FEC609005711E7 /* klipShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		15DF1F3B25FEC609005711E7 /* klipSharedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15DF1F5125FEC609005711E7 /* Build configuration list for PBXNativeTarget "klipSharedTests" */;
+			buildPhases = (
+				15DF1F3825FEC609005711E7 /* Sources */,
+				15DF1F3925FEC609005711E7 /* Frameworks */,
+				15DF1F3A25FEC609005711E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15DF1F3F25FEC609005711E7 /* PBXTargetDependency */,
+				15DF1F4125FEC609005711E7 /* PBXTargetDependency */,
+			);
+			name = klipSharedTests;
+			productName = klipSharedTests;
+			productReference = 15DF1F3C25FEC609005711E7 /* klipSharedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -438,7 +608,7 @@
 		156E8CF82534DB0F00A77397 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					156E8CFF2534DB0F00A77397 = {
@@ -454,6 +624,13 @@
 					};
 					156E8D372534DC5200A77397 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					15DF1F3325FEC609005711E7 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					15DF1F3B25FEC609005711E7 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 156E8CFF2534DB0F00A77397;
 					};
 				};
 			};
@@ -474,6 +651,8 @@
 				156E8D102534DB1100A77397 /* klipTests */,
 				156E8D1B2534DB1100A77397 /* klipUITests */,
 				156E8D372534DC5200A77397 /* klipboard */,
+				15DF1F3325FEC609005711E7 /* klipShared */,
+				15DF1F3B25FEC609005711E7 /* klipSharedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -503,6 +682,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		156E8D362534DC5200A77397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F3225FEC609005711E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F3A25FEC609005711E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -566,6 +759,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15DF1F3025FEC609005711E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DF1F3825FEC609005711E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DF1F4425FEC609005711E7 /* klipSharedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -583,6 +791,26 @@
 			isa = PBXTargetDependency;
 			target = 156E8D372534DC5200A77397 /* klipboard */;
 			targetProxy = 156E8D3D2534DC5200A77397 /* PBXContainerItemProxy */;
+		};
+		15DF1F3F25FEC609005711E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15DF1F3325FEC609005711E7 /* klipShared */;
+			targetProxy = 15DF1F3E25FEC609005711E7 /* PBXContainerItemProxy */;
+		};
+		15DF1F4125FEC609005711E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 156E8CFF2534DB0F00A77397 /* klip */;
+			targetProxy = 15DF1F4025FEC609005711E7 /* PBXContainerItemProxy */;
+		};
+		15DF1F4825FEC609005711E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15DF1F3325FEC609005711E7 /* klipShared */;
+			targetProxy = 15DF1F4725FEC609005711E7 /* PBXContainerItemProxy */;
+		};
+		15DF1F6725FEC6A9005711E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15DF1F3325FEC609005711E7 /* klipShared */;
+			targetProxy = 15DF1F6625FEC6A9005711E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -867,6 +1095,100 @@
 			};
 			name = Release;
 		};
+		15DF1F4C25FEC609005711E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = klipShared/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klipShared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		15DF1F4D25FEC609005711E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = klipShared/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klipShared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		15DF1F4E25FEC609005711E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = klipSharedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klipSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/klip.app/klip";
+			};
+			name = Debug;
+		};
+		15DF1F4F25FEC609005711E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = klipSharedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pimentel.klipSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/klip.app/klip";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -911,6 +1233,24 @@
 			buildConfigurations = (
 				156E8D412534DC5200A77397 /* Debug */,
 				156E8D422534DC5200A77397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15DF1F5025FEC609005711E7 /* Build configuration list for PBXNativeTarget "klipShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DF1F4C25FEC609005711E7 /* Debug */,
+				15DF1F4D25FEC609005711E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15DF1F5125FEC609005711E7 /* Build configuration list for PBXNativeTarget "klipSharedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DF1F4E25FEC609005711E7 /* Debug */,
+				15DF1F4F25FEC609005711E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
